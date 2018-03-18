@@ -1,39 +1,56 @@
-var person = [];
+var years = [1986,1990,2000,1955];
+var ages = [];
 
-
-var detail= {name:"John",
-age: 8,
-height:50
-}
-
-
-person.push(detail);
-
-detail= {name:"smith",
-age: 9,
-height:50
-}
-
-
-person.push(detail);
-
-var big = person[0].name;
-var score = person[0].height + (person[0].age*5);
-
-console.log("Initial  " + big + score);
-
-for(var i=0 ; i< person.length; i++)
+for(var i=0; i< 4; i++)
     {
         
-        if((person[i].height + (person[i].age*5)) > score)
-             { big = person[i].name;
-              score = person[i].height + (person[i].age*5);
-             }
+        ages[i] = prompt("Enter ages");
         
     }
 
-console.log("Winner is :  " + big + "with score ---" + score );
 
-
+for(var j = 0; j < ages.length; j++)
+    {
         
+        if(ages[j] < 18)
+             console.log("Teenager");
+        
+        else
+            console.log("Man")
+        
+    }
+
+
+
+console.log(printFullAge(years));
+
+
+function printFullAge(years)
+{
     
+    var result = [];
+    
+    
+    
+    for(var i = 0 ; i < years.length; i++)
+        {
+            
+            if((2018 - years[i]) <= 18)
+                {
+                    result.push(false);
+                    
+                }
+            
+            else
+                result.push(true);
+            
+            
+            
+            
+            
+        }
+    
+    
+    return result;
+    
+}
